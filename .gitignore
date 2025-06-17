@@ -28,3 +28,9 @@ build/
 # Ignore Eclipse and Docker
 .eclipse/
 .docker/
+.coverage/
+.env
+/.angular
+
+backend/.gitignore
+frontend/.gitignore
