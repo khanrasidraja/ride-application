@@ -1,0 +1,30 @@
+# Ignore IDE/config files
+.vscode/
+.idea/
+*.log
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore OS-specific
+AppData/
+.local/
+.cache/
+.bash_history
+.lesshst
+
+# Ignore build/output/dependencies
+node_modules/
+.m2/
+.p2/
+target/
+dist/
+build/
+
+# Ignore puppeteer cache
+.cache/puppeteer/
+
+# Ignore Eclipse and Docker
+.eclipse/
+.docker/
