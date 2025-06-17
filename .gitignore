@@ -29,8 +29,11 @@ build/
 .eclipse/
 .docker/
 .coverage/
-.env
+.env/
 /.angular
 
 backend/.gitignore
 frontend/.gitignore
+backend/node_modules/
+frontend/node_modules/
+backend/.env
