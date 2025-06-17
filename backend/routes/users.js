@@ -7,7 +7,7 @@ const path = require('path');
 const profile_path = path.join(__dirname, "../Public/Profile");
 const transporter = require("../utils/nodemailer");
 const client = require('../utils/twilio')
-const stripe = require('stripe')('sk_test_51NZeiUANXK9scyulpxLuZ2UL5HvCqJBALzHeOfXQxDljxeroEWHfM9Gz9ZhdOau5mV9tyHQx36q5g6HcVPAvlXiA00iaZTcfFv')
+const stripe = require('stripe')
 
 
   //---------------------------------------MULTER CODE FOR IMAGE UPLOAD---------------------------------------//
