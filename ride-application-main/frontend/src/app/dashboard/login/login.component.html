@@ -1,0 +1,167 @@
+<!-- <div class="parentFormContainer">
+  <img src="../../assets/images/login-page.png" alt="">
+  <div id="formContainer">
+       <div class="social-login">
+        <button 
+          type="button" 
+          class="social-btn google-btn hover-scale" 
+          (click)="onGoogleLogin()"
+          [disabled]="isLoading"
+        >
+          <img src="../../../assets/images/google-icon.png" alt="Google" class="social-icon">
+          <span>Google</span>
+        </button>
+        <button 
+          type="button" 
+          class="social-btn apple-btn hover-scale" 
+          (click)="onAppleLogin()"
+          [disabled]="isLoading"
+        >
+          <img src="../../../assets/images/apple-icon.png" alt="Apple" class="social-icon">
+          <span>Apple</span>
+        </button>
+      </div>ss="mb-3">User Log in</h2>
+    <form class="container" id="createForm" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+      <div class="mb-3">
+        <label class="form-label d-flex justify-content-start">Email</label>
+        <input type="email" class="form-control" formControlName="email"
+          [class.is-invalid]="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)" />
+        <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)"
+          class="invalid-feedback">
+          <div *ngIf="loginForm.get('email')?.errors?.['required']">Email is required.</div>
+          <div *ngIf="loginForm.get('email')?.errors?.['email']">Please enter a valid email.</div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label d-flex justify-content-start">Password</label>
+        <input type="password" class="form-control" formControlName="password"
+          [class.is-invalid]="loginForm.controls['password'].invalid && (loginForm.controls['password'].touched || loginForm.controls['password'].dirty)">
+        <div
+          *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].touched || loginForm.controls['password'].dirty)"
+          class="invalid-feedback">Password is required.</div>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary w-100" id="submitBtn"><mat-icon>fingerprint</mat-icon></button>
+      </div>
+      <div id="forgotDiv">
+        <a routerLinkActive="active" routerLink="/forgotpassword">forgot password ?</a>
+        or
+        <a routerLinkActive="active" routerLink="/signup">signup</a>
+      </div>
+    </form>
+  </div>
+</div> -->
+
+
+
+
+
+
+
+<div class="login-container" [@fadeInUp]>
+  <div class="background-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+  
+  <div class="login-card modern-card" [@slideInLeft]>
+    <div class="card-header">
+      <div class="logo-section">
+        <img src="../../../assets/images/Eber-logo.png" alt="Eber Taxi" class="logo bounce-in">
+        <h2 class="app-title">Eber Taxi</h2>
+        <p class="welcome-text">Welcome back! Please sign in to your account</p>
+      </div>
+    </div>
+
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onLogin()" [@staggerIn]>
+      <div class="form-group">
+        <label for="email" class="form-label">
+          <i class="material-icons">email</i>
+          Email Address
+        </label>
+        <input 
+          type="email" 
+          id="email"
+          class="form-input hover-scale" 
+          placeholder="Enter your email" 
+          formControlName="email"
+          [class.is-invalid]="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)"
+        />
+        <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)"
+             class="error-message fade-in">
+          <div *ngIf="loginForm.get('email')?.errors?.['required']">
+            <i class="material-icons">error</i> Email is required
+          </div>
+          <div *ngIf="loginForm.get('email')?.errors?.['email']">
+            <i class="material-icons">error</i> Please enter a valid email
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="form-label">
+          <i class="material-icons">lock</i>
+          Password
+        </label>
+        <input 
+          type="password" 
+          id="password"
+          class="form-input hover-scale" 
+          placeholder="Enter your password" 
+          formControlName="password"
+          [class.is-invalid]="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)"
+        />
+        <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)"
+             class="error-message fade-in">
+          <i class="material-icons">error</i> Password is required
+        </div>
+      </div>
+
+      <button 
+        type="submit" 
+        class="login-btn modern-btn hover-lift" 
+        [disabled]="isLoading"
+        [class.loading]="isLoading"
+      >
+        <span *ngIf="!isLoading" class="btn-content">
+          <i class="material-icons">login</i>
+          Sign In
+        </span>
+        <span *ngIf="isLoading" class="btn-content">
+          <i class="material-icons spinning">sync</i>
+          Signing In...
+        </span>
+      </button>
+
+      <div class="divider">
+        <span class="divider-text">or continue with</span>
+      </div>
+
+      <div class="social-login">
+        <button type="button" class="social-btn google-btn hover-scale">
+          <img src="../../../assets/images/google-icon.png" alt="Google" class="social-icon">
+          <span>Google</span>
+        </button>
+        <button type="button" class="social-btn apple-btn hover-scale">
+          <img src="../../../assets/images/google-icon.png" alt="Apple" class="social-icon">
+          <span>Apple</span>
+        </button>
+      </div>
+
+      <div class="auth-links">
+        <a routerLink="/forgotpassword" class="auth-link hover-underline">
+          <i class="material-icons">help</i>
+          Forgot Password?
+        </a>
+        <span class="separator">•</span>
+        <a routerLink="/signup" class="auth-link hover-underline">
+          <i class="material-icons">person_add</i>
+          Create Account
+        </a>
+      </div>
+    </form>
+  </div>
+</div>

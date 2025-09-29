@@ -1,0 +1,13 @@
+<div class="sidebar-header">
+  <h2>Admin Panel</h2>
+</div>
+
+<mat-nav-list class="sidebar-menu">
+  <mat-list-item 
+    *ngFor="let item of menuItems" 
+    [class.active]="isActive(item.route)"
+    (click)="navigate(item.route)">
+    <mat-icon matListIcon>{{ item.icon }}</mat-icon>
+    <span matLine>{{ item.label }}</span>
+  </mat-list-item>
+</mat-nav-list>

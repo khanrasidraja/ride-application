@@ -1,0 +1,39 @@
+.sidebar-header {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.sidebar-header h2 {
+  color: white;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.sidebar-menu {
+  padding: 0;
+}
+
+.sidebar-menu mat-list-item {
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 2px 8px;
+  border-radius: 4px;
+}
+
+.sidebar-menu mat-list-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.sidebar-menu mat-list-item.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.sidebar-menu mat-icon {
+  color: inherit;
+  margin-right: 12px;
+}

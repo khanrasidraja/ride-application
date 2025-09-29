@@ -1,0 +1,82 @@
+<div class="dashboard-container">
+  <h1>Admin Dashboard</h1>
+  
+  <div class="stats-grid" *ngIf="!isLoading">
+    <mat-card class="stat-card users">
+      <mat-card-content>
+        <div class="stat-icon">
+          <mat-icon>people</mat-icon>
+        </div>
+        <div class="stat-info">
+          <h3>{{ stats.totalUsers }}</h3>
+          <p>Total Users</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card drivers">
+      <mat-card-content>
+        <div class="stat-icon">
+          <mat-icon>local_taxi</mat-icon>
+        </div>
+        <div class="stat-info">
+          <h3>{{ stats.totalDrivers }}</h3>
+          <p>Total Drivers</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card rides">
+      <mat-card-content>
+        <div class="stat-icon">
+          <mat-icon>commute</mat-icon>
+        </div>
+        <div class="stat-info">
+          <h3>{{ stats.totalRides }}</h3>
+          <p>Total Rides</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card active-rides">
+      <mat-card-content>
+        <div class="stat-icon">
+          <mat-icon>directions_run</mat-icon>
+        </div>
+        <div class="stat-info">
+          <h3>{{ stats.activeRides }}</h3>
+          <p>Active Rides</p>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="loading-container" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+    <p>Loading dashboard data...</p>
+  </div>
+
+  <div class="charts-section" *ngIf="!isLoading">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Quick Actions</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="action-buttons">
+          <button mat-raised-button color="primary" routerLink="/admin/users">
+            <mat-icon>people</mat-icon>
+            Manage Users
+          </button>
+          <button mat-raised-button color="accent" routerLink="/admin/drivers">
+            <mat-icon>local_taxi</mat-icon>
+            Manage Drivers
+          </button>
+          <button mat-raised-button color="warn" routerLink="/admin/rides">
+            <mat-icon>commute</mat-icon>
+            View Rides
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

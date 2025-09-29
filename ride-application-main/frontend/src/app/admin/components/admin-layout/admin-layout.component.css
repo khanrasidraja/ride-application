@@ -1,0 +1,21 @@
+.admin-container {
+  height: 100vh;
+}
+
+.admin-sidenav {
+  width: 250px;
+  background: #1e3a8a;
+  color: white;
+}
+
+.admin-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-main-content {
+  padding: 20px;
+  flex: 1;
+  background: #f8fafc;
+  overflow-y: auto;
+}
